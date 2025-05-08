@@ -1,0 +1,84 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.question {
+  margin-bottom: 1.5rem;
+}
+
+.options {
+  list-style: none;
+}
+
+.options li {
+  margin-bottom: 0.75rem;
+}
+
+.options input {
+  margin-right: 0.5rem;
+}
+
+#timer {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.results {
+  margin-top: 2rem;
+}
+
+.results h2 {
+  margin-bottom: 1rem;
+}
+
+.result-item {
+  margin-bottom: 0.75rem;
+}
