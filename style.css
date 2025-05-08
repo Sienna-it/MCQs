@@ -109,3 +109,34 @@ h1, h2, h3 {
   line-height: 1.4;
   color: #444;
 }
+
+/* Increase spacing between questions */
+.question {
+  margin-bottom: 2rem;     /* was 1.5rem */
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Result list styling */
+.results ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.results li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* Status colors */
+.results li.correct   { background: #28a745; }  /* vibrant green */
+.results li.wrong     { background: #dc3545; }  /* red */
+.results li.unattempt { background: #ffc107; }  /* yellow; text will be dark by contrast */
+  
