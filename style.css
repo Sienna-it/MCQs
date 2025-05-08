@@ -66,9 +66,10 @@ h1, h2, h3 {
 .options {
   list-style: none;
   padding-left: 0;
+  margin-left: 0;
 }
 .options li {
-  margin: 0.25rem 0;              /* tighter grouping under question */
+  margin: 0.2rem 0;              /* tighter grouping under question */
 }
 
 /* Timer */
