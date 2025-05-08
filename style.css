@@ -57,13 +57,27 @@ h1, h2, h3 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.question-block {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.question-block .question {
+  margin-bottom: 0.5rem;
+}
+
+.options li {
+  margin: 0.3rem 0;
+}
+
+
 .options {
   list-style: none;
   padding-left: 0;
   margin-top: 0.25rem; /* reduced spacing between question and its options */
-}
-.options li {
-  margin: 0.25rem 0; /* tighter spacing for options */
 }
 
 #timer {
