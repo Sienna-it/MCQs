@@ -48,38 +48,30 @@ h1, h2, h3 {
   background: #0056b3;
 }
 
-/* QUESTION CARD STYLE */
-.question {
-  background: #ffffff;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
+/* Group each question + its options */
 .question-block {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;               /* space from previous question-block */
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Inner spacing: question vs options */
 .question-block .question {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.options li {
-  margin: 0.3rem 0;
-}
-
-
+/* Options list styling */
 .options {
   list-style: none;
   padding-left: 0;
-  margin-top: 0.25rem; /* reduced spacing between question and its options */
+}
+.options li {
+  margin: 0.25rem 0;              /* tighter grouping under question */
 }
 
+/* Timer */
 #timer {
   text-align: right;
   font-size: 1.2rem;
@@ -88,15 +80,16 @@ h1, h2, h3 {
   transition: all 0.3s ease-in-out;
 }
 #timer.flash {
-  color: #ff6b6b;
+  color: #ff3b3b;
   font-size: 2rem;
   animation: flash 1s infinite;
 }
 @keyframes flash {
   0%, 100% { opacity: 1; }
-  50%     { opacity: 0.5; }
+  50%      { opacity: 0.5; }
 }
 
+/* Results container */
 .results {
   margin-top: 2rem;
   background: #f1f5f9;
@@ -104,6 +97,13 @@ h1, h2, h3 {
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
+.result-item {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Detailed result list */
 .results ul {
   list-style: none;
   padding: 0;
@@ -117,11 +117,11 @@ h1, h2, h3 {
   border-radius: 6px;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
+  font-weight: 600;              /* bolder text inside result items */
   color: #fff;
-  font-weight: 600; /* bolder text inside result items */
 }
-/* Lighter status colors */
-.results li.correct   { background: #a3d9a5; }
-.results li.wrong     { background: #f0a3a3; }
-.results li.unattempt { background: #fcf1b8; color: #333; font-weight: 600; }
-  
+
+/* Lighter status colors for contrast */
+.results li.correct   { background: #a3d9a5; }  /* light pastel green */
+.results li.wrong     { background: #f0a3a3; }  /* light pastel red */
+.results li.unattempt { background: #ffd97d; color: #333; }  /* light yellow with dark text */
