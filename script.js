@@ -8,13 +8,14 @@ const questions = [
     question: "2 + 2 equals?",
     options: ["3", "4", "5", "6"],
     answer: 1
-  },
-  // Add or remove question objects
+  }
 ];
 
 let startTime, timerInterval;
+const questionTimes = new Array(questions.length).fill(0);
+let currentQuestionIndex = 0;
+let questionStartTime = null;
 
-const userTimes = [];
 const startBtn = document.getElementById('start-btn');
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
@@ -23,20 +24,33 @@ const submitBtn = document.getElementById('submit-btn');
 const resultScreen = document.getElementById('result-screen');
 const timeEl = document.getElementById('time');
 
-function startTimer() {
-  startTime = Date.now();
-  timerInterval = setInterval(() => {
-    const diff = Date.now() - startTime;
-    const mins = String(Math.floor(diff / 60000)).padStart(2, '0');
-    const secs = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
-    timeEl.textContent = `${mins}:${secs}`;
-  }, 500);
+let countdownTime = 600; // 10 minutes in seconds
+
+function formatTime(seconds) {
+  const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const secs = String(seconds % 60).padStart(2, '0');
+  return `${mins}:${secs}`;
 }
 
-function stopTimer() {
-  clearInterval(timerInterval);
-  const total = Date.now() - startTime;
-  return total / 1000;
+function startTimer() {
+  timeEl.textContent = formatTime(countdownTime);
+  timerInterval = setInterval(() => {
+    countdownTime--;
+    timeEl.textContent = formatTime(countdownTime);
+
+    if (countdownTime <= 60) {
+      timeEl.style.color = 'red';
+      timeEl.style.fontSize = '1.5rem';
+      timeEl.classList.add('flash');
+    }
+
+    if (countdownTime <= 0) {
+      clearInterval(timerInterval);
+      submitBtn.disabled = true;
+      alert("Time's up! Submitting your test.");
+      submitBtn.click();
+    }
+  }, 1000);
 }
 
 function renderQuestions() {
@@ -51,13 +65,22 @@ function renderQuestions() {
       const li = document.createElement('li');
       li.innerHTML = `
         <label>
-          <input type="radio" name="q${idx}" value="${i}" /> ${opt}
+          <input type="radio" name="q${idx}" value="${i}" onclick="recordTime(${idx})"/> ${opt}
         </label>`;
       ul.appendChild(li);
     });
     quizForm.appendChild(div);
     quizForm.appendChild(ul);
   });
+  questionStartTime = Date.now();
+}
+
+function recordTime(idx) {
+  const now = Date.now();
+  if (questionStartTime) {
+    questionTimes[idx] += (now - questionStartTime) / 1000;
+  }
+  questionStartTime = now;
 }
 
 startBtn.addEventListener('click', () => {
@@ -68,8 +91,12 @@ startBtn.addEventListener('click', () => {
 });
 
 submitBtn.addEventListener('click', () => {
-  const totalTime = stopTimer();
-  const timesPerQ = totalTime / questions.length;
+  clearInterval(timerInterval);
+  const now = Date.now();
+  if (questionStartTime) {
+    questionTimes[currentQuestionIndex] += (now - questionStartTime) / 1000;
+  }
+
   let correctCount = 0;
   let maxTimeIdx = 0;
   const details = [];
@@ -78,8 +105,8 @@ submitBtn.addEventListener('click', () => {
     const selected = +document.querySelector(`input[name=q${idx}]:checked`)?.value;
     const isCorrect = selected === q.answer;
     if (isCorrect) correctCount++;
-    details.push({ idx: idx + 1, time: timesPerQ.toFixed(2), correct: isCorrect });
-    if (timesPerQ > (details[maxTimeIdx]?.time || 0)) maxTimeIdx = idx;
+    details.push({ idx: idx + 1, time: questionTimes[idx].toFixed(2), correct: isCorrect });
+    if (questionTimes[idx] > questionTimes[maxTimeIdx]) maxTimeIdx = idx;
   });
 
   quizScreen.style.display = 'none';
@@ -87,13 +114,12 @@ submitBtn.addEventListener('click', () => {
   resultScreen.innerHTML = `
     <h2>Results</h2>
     <p class="result-item">Score: ${correctCount} / ${questions.length}</p>
-    <p class="result-item">Total Time: ${totalTime.toFixed(2)}s</p>
-    <p class="result-item">Average Time per Q: ${timesPerQ.toFixed(2)}s</p>
-    <p class="result-item">Longest on Q#: ${maxTimeIdx + 1}</p>
+    <p class="result-item">Total Time: ${(600 - countdownTime).toFixed(2)}s</p>
+    <p class="result-item">Average Time per Q: ${((600 - countdownTime) / questions.length).toFixed(2)}s</p>
+    <p class="result-item">Most Time on Q#: ${maxTimeIdx + 1}</p>
     <h3>Details:</h3>
     <ul>
       ${details.map(d => `<li>Q${d.idx}: ${d.time}s — ${d.correct ? 'Correct' : 'Wrong'}</li>`).join('')}
     </ul>
   `;
 });
-                                   
