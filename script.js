@@ -36,23 +36,32 @@ function startTimer() {
 }
 
 function renderQuestions() {
-  quizForm.innerHTML = '';
-  questions.forEach((q, idx) => {
-    const div = document.createElement('div');
-    div.className = 'question';
-    div.innerHTML = `<p>${idx+1}. ${q.question}</p>`;
-    const ul = document.createElement('ul');
-    ul.className = 'options';
-    q.options.forEach((opt,i) => {
-      const li = document.createElement('li');
-      li.innerHTML = `<label><input type="radio" name="q${idx}" value="${i}" onclick="recordTime(${idx})"/> ${opt}</label>`;
-      ul.appendChild(li);
-    });
-    quizForm.appendChild(div);
-    quizForm.appendChild(ul);
-  });
-  questionStartTime = Date.now();
+  quizForm.innerHTML = '';
+  questions.forEach((q, idx) => {
+    const block = document.createElement('div');
+    block.className = 'question-block';
+
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
+
+    const ul = document.createElement('ul');
+    ul.className = 'options';
+    q.options.forEach((opt, i) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <label>
+          <input type="radio" name="q${idx}" value="${i}" /> ${opt}
+        </label>`;
+      ul.appendChild(li);
+    });
+
+    block.appendChild(div);
+    block.appendChild(ul);
+    quizForm.appendChild(block);
+  });
 }
+
 
 function recordTime(idx) {
   const now = Date.now();
