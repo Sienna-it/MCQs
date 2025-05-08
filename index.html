@@ -1,1 +1,26 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCQ Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>MCQ Test</h1>
+    <div id="start-screen">
+      <button id="start-btn" class="btn btn-primary">Start Test</button>
+    </div>
+    <div id="quiz-screen" style="display: none;">
+      <div id="timer">Time: <span id="time">00:00</span></div>
+      <form id="quiz-form"></form>
+      <button id="submit-btn" class="btn btn-primary">Submit</button>
+    </div>
+    <div id="result-screen" style="display: none;" class="results"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+  
