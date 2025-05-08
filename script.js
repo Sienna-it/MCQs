@@ -94,32 +94,77 @@ submitBtn.addEventListener('click', () => {
   clearInterval(timerInterval);
   const now = Date.now();
   if (questionStartTime) {
+    // finalize last question's time
     questionTimes[currentQuestionIndex] += (now - questionStartTime) / 1000;
   }
 
-  let correctCount = 0;
-  let maxTimeIdx = 0;
-  const details = [];
+  let totalScore = 0;
+  const maxScore   = questions.length * 4;
+  let maxTimeIdx   = 0;
+  const details    = [];
 
   questions.forEach((q, idx) => {
-    const selected = +document.querySelector(`input[name=q${idx}]:checked`)?.value;
-    const isCorrect = selected === q.answer;
-    if (isCorrect) correctCount++;
-    details.push({ idx: idx + 1, time: questionTimes[idx].toFixed(2), correct: isCorrect });
-    if (questionTimes[idx] > questionTimes[maxTimeIdx]) maxTimeIdx = idx;
+    const selInput = document.querySelector(`input[name=q${idx}]:checked`);
+    let selected = selInput ? +selInput.value : null;
+    let status, pts;
+
+    if (selected === q.answer) {
+      status = 'correct';
+      pts = 4;
+    } else if (selected === null) {
+      status = 'unattempt';
+      pts = 0;
+    } else {
+      status = 'wrong';
+      pts = -1;
+    }
+
+    totalScore += pts;
+    details.push({
+      idx: idx + 1,
+      time: questionTimes[idx].toFixed(2),
+      status,
+      pts
+    });
+
+    if (questionTimes[idx] > questionTimes[maxTimeIdx]) {
+      maxTimeIdx = idx;
+    }
   });
 
-  quizScreen.style.display = 'none';
+  // Build results markup
+  const resList = details.map(d => 
+    `<li class="${d.status}">
+       <span>Q${d.idx}: ${d.time}s</span>
+       <span>${d.status === 'unattempt' ? 'Unattempted' : (d.status === 'correct' ? 'Correct' : 'Wrong')}</span>
+       <strong>${d.pts > 0 ? '+'+d.pts : d.pts}</strong>
+     </li>`
+  ).join('');
+
+  // Insert into DOM
+  quizScreen.style.display   = 'none';
   resultScreen.style.display = 'block';
-  resultScreen.innerHTML = `
-    <h2>Results</h2>
-    <p class="result-item">Score: ${correctCount} / ${questions.length}</p>
-    <p class="result-item">Total Time: ${(600 - countdownTime).toFixed(2)}s</p>
-    <p class="result-item">Average Time per Q: ${((600 - countdownTime) / questions.length).toFixed(2)}s</p>
-    <p class="result-item">Most Time on Q#: ${maxTimeIdx + 1}</p>
+  document.getElementById('results-wrapper').innerHTML = `
+    <h2>Your Score</h2>
+    <div id="score-display">0 / ${maxScore}</div>
+    <p class="result-item">Questions: ${questions.length}</p>
+    <p class="result-item">Most time on Q#: ${maxTimeIdx + 1}</p>
     <h3>Details:</h3>
-    <ul>
-      ${details.map(d => `<li>Q${d.idx}: ${d.time}s — ${d.correct ? 'Correct' : 'Wrong'}</li>`).join('')}
-    </ul>
+    <ul>${resList}</ul>
   `;
+
+  // Animate the score count-up
+  const display = document.getElementById('score-display');
+  let current = 0;
+  const step = () => {
+    if (current < totalScore) {
+      current++;
+      display.textContent = `${current} / ${maxScore}`;
+      requestAnimationFrame(step);
+    } else {
+      display.textContent = `${totalScore} / ${maxScore}`;
+    }
+  };
+  requestAnimationFrame(step);
 });
+
