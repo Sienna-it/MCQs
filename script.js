@@ -73,6 +73,7 @@ startBtn.addEventListener('click', () => {
   startScreen.style.display = 'none';
   quizScreen.style.display  = 'block';
   renderQuestions();
+  questionStartTime = Date.now();
   startTimer();
 });
 
