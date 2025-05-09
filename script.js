@@ -1,20 +1,22 @@
 const questions = [
   { question: "What is the capital of France?", options: ["Berlin","Paris","Madrid","Rome"], answer: 1 },
-  { question: "2 + 2 equals?",               options: ["3","4","5","6"],         answer: 1 }
+  { question: "2 + 3 equals?",               options: ["3","4","5","6"],         answer: 2 }
 ];
 
-let timerInterval, questionStartTime;
+let timerInterval;
+let lastInteractionTime = null;
+let lastIdx = null;                                // which question was being “worked on”
 const questionTimes = Array(questions.length).fill(0);
 let countdownTime = 600;  // 10 minutes
 
-const startBtn      = document.getElementById('start-btn');
-const startScreen   = document.getElementById('start-screen');
-const quizScreen    = document.getElementById('quiz-screen');
-const quizForm      = document.getElementById('quiz-form');
-const submitBtn     = document.getElementById('submit-btn');
-const resultScreen  = document.getElementById('result-screen');
-const resultsWrapper= document.getElementById('results-wrapper');
-const timeEl        = document.getElementById('time');
+const startBtn       = document.getElementById('start-btn');
+const startScreen    = document.getElementById('start-screen');
+const quizScreen     = document.getElementById('quiz-screen');
+const quizForm       = document.getElementById('quiz-form');
+const submitBtn      = document.getElementById('submit-btn');
+const resultScreen   = document.getElementById('result-screen');
+const resultsWrapper = document.getElementById('results-wrapper');
+const timeEl         = document.getElementById('time');
 
 function formatTime(sec) {
   return `${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
@@ -36,56 +38,61 @@ function startTimer() {
 }
 
 function renderQuestions() {
-  quizForm.innerHTML = '';
-  questions.forEach((q, idx) => {
-    const block = document.createElement('div');
-    block.className = 'question-block';
+  quizForm.innerHTML = '';
+  questions.forEach((q, idx) => {
+    const block = document.createElement('div');
+    block.className = 'question-block';
 
-    const div = document.createElement('div');
-    div.className = 'question';
-    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
 
-    const ul = document.createElement('ul');
-    ul.className = 'options';
-    q.options.forEach((opt, i) => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <label>
-          <input type="radio" name="q${idx}" value="${i}" /> ${opt}
-        </label>`;
-      ul.appendChild(li);
-    });
+    const ul = document.createElement('ul');
+    ul.className = 'options';
 
-    block.appendChild(div);
-    block.appendChild(ul);
-    quizForm.appendChild(block);
-  });
+    q.options.forEach((opt, i) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <label>
+          <input type="radio" name="q${idx}" value="${i}" />
+          ${opt}
+        </label>`;
+      // when user selects an answer, record time delta
+      li.querySelector('input').addEventListener('change', () => recordTime(idx));
+      ul.appendChild(li);
+    });
+
+    block.appendChild(div);
+    block.appendChild(ul);
+    quizForm.appendChild(block);
+  });
 }
-
 
 function recordTime(idx) {
   const now = Date.now();
-  questionTimes[idx] += (now - questionStartTime) / 1000;
-  questionStartTime = now;
+  if (lastInteractionTime !== null && lastIdx !== null) {
+    // add elapsed seconds to whichever question was “active” before this click
+    questionTimes[lastIdx] += (now - lastInteractionTime) / 1000;
+  }
+  lastInteractionTime = now;  // reset the clock
+  lastIdx = idx;             // mark this question as now “active”
 }
 
 startBtn.addEventListener('click', () => {
   startScreen.style.display = 'none';
   quizScreen.style.display  = 'block';
   renderQuestions();
-  questionStartTime = Date.now();
   startTimer();
+  lastInteractionTime = Date.now();  // start tracking
 });
 
 submitBtn.addEventListener('click', () => {
   clearInterval(timerInterval);
   const now = Date.now();
-  questionTimes.forEach((_, i) => {
-    // finalize time for any question that’s been started
-    if (i === questions.length - 1 && questionStartTime) {
-      questionTimes[i] += (now - questionStartTime) / 1000;
-    }
-  });
+  // final delta for the last question they were on
+  if (lastInteractionTime !== null && lastIdx !== null) {
+    questionTimes[lastIdx] += (now - lastInteractionTime) / 1000;
+  }
 
   let totalScore = 0;
   const maxScore = questions.length * 4;
@@ -99,7 +106,12 @@ submitBtn.addEventListener('click', () => {
     else if (val === null)     { status = 'unattempt'; pts =  0; stats.unattempt++; }
     else                       { status = 'wrong';     pts = -1; stats.wrong++;     }
     totalScore += pts;
-    return { idx: idx+1, time: questionTimes[idx].toFixed(2), status, pts };
+    return {
+      idx: idx + 1,
+      time: questionTimes[idx].toFixed(2),
+      status,
+      pts
+    };
   });
 
   // render results
@@ -114,13 +126,16 @@ submitBtn.addEventListener('click', () => {
       ${details.map(d => `
         <li class="${d.status}">
           <span>Q${d.idx}: ${d.time}s</span>
-          <span>${d.status === 'unattempt' ? 'Unattempted' : d.status.charAt(0).toUpperCase()+d.status.slice(1)}</span>
-          <strong>${d.pts>0? '+'+d.pts : d.pts}</strong>
+          <span>${d.status === 'unattempt'
+            ? 'Unattempted'
+            : d.status.charAt(0).toUpperCase() + d.status.slice(1)
+          }</span>
+          <strong>${d.pts > 0 ? '+' + d.pts : d.pts}</strong>
         </li>`).join('')}
     </ul>
   `;
-  quizScreen.style.display  = 'none';
-  resultScreen.style.display= 'block';
+  quizScreen.style.display   = 'none';
+  resultScreen.style.display = 'block';
 
   // animate score count-up
   const display = document.getElementById('score-display');
@@ -135,4 +150,4 @@ submitBtn.addEventListener('click', () => {
     }
   })();
 });
-        
+                              
