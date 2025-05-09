@@ -194,7 +194,7 @@ submitBtn.addEventListener('click', () => {
   (function step() {
     if (cur < totalScore) {
       cur+= (totalScore / 300)
-      display.textContent = `${cur} / ${maxScore}`;
+      display.textContent = `${Math.round(cur)} / ${maxScore}`;
       requestAnimationFrame(step);
     } else {
       display.textContent = `${totalScore} / ${maxScore}`;
