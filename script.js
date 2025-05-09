@@ -138,68 +138,87 @@ startBtn.addEventListener('click', () => {
 });
 
 submitBtn.addEventListener('click', () => {
-  clearInterval(timerInterval);
-  const now = Date.now();
-  // final delta for the last question they were on
-  if (lastInteractionTime !== null && lastIdx !== null) {
-    questionTimes[lastIdx] += (now - lastInteractionTime) / 1000;
-  }
+  clearInterval(timerInterval);
+  const now = Date.now();
+  if (lastInteractionTime !== null && lastIdx !== null) {
+    questionTimes[lastIdx] += (now - lastInteractionTime) / 1000;
+  }
 
-  let totalScore = 0;
-  const marksAward = 5;
-  const maxScore = questions.length * marksAward;
-  const stats    = { correct: 0, wrong: 0, unattempt: 0 };
+  let totalScore = 0;
+  const marksAward = 5;
+  const maxScore = questions.length * marksAward;
+  const stats = { correct: 0, wrong: 0, unattempt: 0 };
 
-  const details = questions.map((q, idx) => {
-    const sel = document.querySelector(`input[name=q${idx}]:checked`);
-    const val = sel ? +sel.value : null;
-    let status, pts;
-    if      (val === q.answer) { status = 'correct';   pts =  5; stats.correct++;   }
-    else if (val === null)     { status = 'unattempt'; pts =  0; stats.unattempt++; }
-    else                       { status = 'wrong';     pts = -1; stats.wrong++;     }
-    totalScore += pts;
-    return {
-      idx: idx + 1,
-      time: questionTimes[idx].toFixed(2),
-      status,
-      pts
-    };
-  });
+  const details = questions.map((q, idx) => {
+    const sel = document.querySelector(`input[name=q${idx}]:checked`);
+    const val = sel ? +sel.value : null;
+    let status, pts;
+    if (val === q.answer) {
+      status = 'correct';
+      pts = 5;
+      stats.correct++;
+    } else if (val === null) {
+      status = 'unattempt';
+      pts = 0;
+      stats.unattempt++;
+    } else {
+      status = 'wrong';
+      pts = -1;
+      stats.wrong++;
+    }
+    totalScore += pts;
+    return {
+      idx: idx + 1,
+      time: questionTimes[idx].toFixed(2),
+      status,
+      pts,
+      question: q.question,
+      correctText: q.options[q.answer]
+    };
+  });
 
-  // render results
-  resultsWrapper.innerHTML = `
-    <h2>Your Score</h2>
-    <div id="score-display">0 / ${maxScore}</div>
-    <p class="result-item">Right: ${stats.correct}</p>
-    <p class="result-item">Wrong: ${stats.wrong}</p>
-    <p class="result-item">Unattempted: ${stats.unattempt}</p>
-    <h3>Details:</h3>
-    <ul>
-      ${details.map(d => `
-        <li class="${d.status}">
-          <span>Q${d.idx}: ${d.time}s</span>
-          <span>${d.status === 'unattempt'
-            ? 'Unattempted'
-            : d.status.charAt(0).toUpperCase() + d.status.slice(1)
-          }</span>
-          <strong>${d.pts > 0 ? '+' + d.pts : d.pts}</strong>
-        </li>`).join('')}
-    </ul>
-  `;
-  quizScreen.style.display   = 'none';
-  resultScreen.style.display = 'block';
+  resultsWrapper.innerHTML = `
+    <h2>Your Score</h2>
+    <div id="score-display">0 / ${maxScore}</div>
+    <p class="result-item">Right: ${stats.correct}</p>
+    <p class="result-item">Wrong: ${stats.wrong}</p>
+    <p class="result-item">Unattempted: ${stats.unattempt}</p>
+    <h3>Details:</h3>
+    <ul>
+      ${details.map(d => {
+        if (d.status === 'correct') {
+          return `
+            <li class="correct">
+              <span>Q${d.idx}: ${d.time}s — Correct (+${d.pts})</span>
+            </li>`;
+        } else {
+          const label = d.status === 'wrong' ? 'Wrong' : 'Unattempted';
+          return `
+            <li class="${d.status}">
+              <details>
+                <summary>Q${d.idx}: ${d.time}s — ${label} (${d.pts >= 0 ? '+' + d.pts : d.pts})</summary>
+                <p><strong>Question:</strong> ${d.question}</p>
+                <p><strong>Answer:</strong> ${d.correctText}</p>
+              </details>
+            </li>`;
+        }
+      }).join('')}
+    </ul>
+  `;
 
-  // animate score count-up
-  const display = document.getElementById('score-display');
-  let cur = 0;
-  (function step() {
-    if (cur < totalScore) {
-      cur+= (totalScore / 300)
-      display.textContent = `${Math.round(cur)} / ${maxScore}`;
-      requestAnimationFrame(step);
-    } else {
-      display.textContent = `${totalScore} / ${maxScore}`;
-    }
-  })();
+  quizScreen.style.display = 'none';
+  resultScreen.style.display = 'block';
+
+  const display = document.getElementById('score-display');
+  let cur = 0;
+  (function step() {
+    if (cur < totalScore) {
+      cur += (totalScore / 300);
+      display.textContent = `${Math.round(cur)} / ${maxScore}`;
+      requestAnimationFrame(step);
+    } else {
+      display.textContent = `${totalScore} / ${maxScore}`;
+    }
+  })();
 });
-                              
+        
