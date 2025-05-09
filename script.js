@@ -146,14 +146,15 @@ submitBtn.addEventListener('click', () => {
   }
 
   let totalScore = 0;
-  const maxScore = questions.length * 4;
+  const marksAward = 5;
+  const maxScore = questions.length * marksAward;
   const stats    = { correct: 0, wrong: 0, unattempt: 0 };
 
   const details = questions.map((q, idx) => {
     const sel = document.querySelector(`input[name=q${idx}]:checked`);
     const val = sel ? +sel.value : null;
     let status, pts;
-    if      (val === q.answer) { status = 'correct';   pts =  4; stats.correct++;   }
+    if      (val === q.answer) { status = 'correct';   pts =  5; stats.correct++;   }
     else if (val === null)     { status = 'unattempt'; pts =  0; stats.unattempt++; }
     else                       { status = 'wrong';     pts = -1; stats.wrong++;     }
     totalScore += pts;
