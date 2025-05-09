@@ -7,7 +7,8 @@ let timerInterval;
 let lastInteractionTime = null;
 let lastIdx = null;                                // which question was being “worked on”
 const questionTimes = Array(questions.length).fill(0);
-let countdownTime = 600;  // 10 minutes
+const totalTime = (questions.length * 60)
+let countdownTime = totalTime;
 
 const startBtn       = document.getElementById('start-btn');
 const startScreen    = document.getElementById('start-screen');
@@ -27,7 +28,7 @@ function startTimer() {
   timerInterval = setInterval(() => {
     countdownTime--;
     timeEl.textContent = formatTime(countdownTime);
-    if (countdownTime <= 60) timeEl.classList.add('flash');
+    if (countdownTime <= (totalTime / 10)) timeEl.classList.add('flash');
     if (countdownTime <= 0) {
       clearInterval(timerInterval);
       submitBtn.disabled = true;
@@ -142,7 +143,7 @@ submitBtn.addEventListener('click', () => {
   let cur = 0;
   (function step() {
     if (cur < totalScore) {
-      cur++;
+      cur+= (totalScore / 300)
       display.textContent = `${cur} / ${maxScore}`;
       requestAnimationFrame(step);
     } else {
