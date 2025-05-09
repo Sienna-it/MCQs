@@ -176,6 +176,7 @@ submitBtn.addEventListener('click', () => {
                       <summary>Q${d.idx}: ${d.time}s — ${label} (${d.pts >= 0 ? '+' + d.pts : d.pts})</summary>
                       <p><strong>Question:</strong> ${d.question}</p>
                       <p><strong>Answer:</strong> ${d.correctText}</p>
+                      ${d.status === 'wrong' && d.userAnswerText !== null ? `<p><strong>You Selected:</strong> ${d.userAnswerText}</p>` : ''}
                     </details>
                   </li>`;
         }
