@@ -1,60 +1,56 @@
 const questions = [
+  // Logical & Reasoning (CUET GAT PYQs)
   {
-    question: "Who discovered the electron?",
-    options: ["Marie Curie", "J.J. Thomson", "Ernest Rutherford", "Niels Bohr"],
-    answer: 1
+    question: "At which of the following places is the weight of an object maximum?",
+    options: ["Equator", "Poles", "Tropic of Cancer", "Tropic of Capricorn"],
+    answer: 1  // Poles :contentReference[oaicite:3]{index=3}
   },
   {
-    question: "Due to ocean acidification, the pH of surface ocean water has decreased by about what amount since the Industrial Revolution?",
-    options: ["0.01", "0.1", "1.0", "10.0"],
-    answer: 1
+    question: "A man walks 5 km south, turns right and walks 3 km, then turns left and walks 5 km. In which direction is he from the starting point?",
+    options: ["West", "South", "North-East", "South-West"],
+    answer: 3  // South-West :contentReference[oaicite:4]{index=4}
   },
   {
-    question: "Which of the following is NOT a part of the Quantitative Aptitude section of CUET?",
-    options: ["Number Systems", "Series Completion", "Coding–Decoding", "Logarithms"],
-    answer: 2
+    question: "Which of the following cannot be a measure of an angle of a cyclic quadrilateral?",
+    options: ["90°", "150°", "170°", "180°"],
+    answer: 3  // 180° :contentReference[oaicite:5]{index=5}
   },
   {
-    question: "The distance between two points (2,3) and (−1,−1) in the Cartesian plane is:",
-    options: ["5", "√20", "√13", "7"],
-    answer: 2
+    question: "If the word ‘BOY’ is coded as ‘DQA’, how is ‘CAT’ coded?",
+    options: ["ECV", "EDU", "FBS", "ECT"],
+    answer: 0  // ECV :contentReference[oaicite:6]{index=6}
   },
   {
-    question: "Which constitutional amendment introduced the Right to Education in India?",
-    options: ["73rd", "86th", "91st", "93rd"],
-    answer: 1
+    question: "Find the next number in the series: 8, 16, 32, 64, __.",
+    options: ["112", "128", "144", "160"],
+    answer: 1  // 128 :contentReference[oaicite:7]{index=7}
+  },
+
+  // General Test (CUET GAT PYQs)
+  {
+    question: "6 : 1 is the ratio of Amar’s age to Ajay’s age. After 7 years, this ratio becomes 7 : 2. What is Ajay’s present age (in years)?",
+    options: ["9", "7", "5", "11"],
+    answer: 1  // 7 years :contentReference[oaicite:8]{index=8}
   },
   {
-    question: "In logical reasoning, if all roses are flowers and some flowers fade quickly, we can conclude that:",
-    options: [
-      "All roses fade quickly",
-      "Some roses may fade quickly",
-      "No rose fades quickly",
-      "All flowers are roses"
-    ],
-    answer: 1
+    question: "Which of the following is NOT a state of India?",
+    options: ["Manipur", "Ladakh", "Uttar Pradesh", "Gujarat"],
+    answer: 1  // Ladakh :contentReference[oaicite:9]{index=9}
   },
   {
-    question: "The G20 summit in 2024 was hosted by which country?",
-    options: ["Italy", "India", "Brazil", "Japan"],
-    answer: 1
+    question: "Who was the first Governor-General of independent India?",
+    options: ["Dr. Sarvepalli Radhakrishnan", "Dr. Rajendra Prasad", "Lord Mountbatten", "Lord William Bentinck"],
+    answer: 2  // Lord Mountbatten :contentReference[oaicite:10]{index=10}
   },
+
+  // Quantitative Aptitude (CUET QA PYQs)
   {
-    question: "The compound interest on a principal of ₹1,000 at 10% per annum compounded annually for 2 years is:",
-    options: ["₹210", "₹100", "₹110", "₹120"],
-    answer: 0
-  },
-  {
-    question: "Which planet has the longest day (rotation period) in our solar system?",
-    options: ["Venus", "Mercury", "Jupiter", "Saturn"],
-    answer: 0
-  },
-  {
-    question: "Who is the author of the play ‘Hamlet’?",
-    options: ["Christopher Marlowe", "Ben Jonson", "William Shakespeare", "John Webster"],
-    answer: 2
+    question: "A town had a population of 20,000 in 1980. By 1981, it increased by 25%. In 1982, it decreased by 20%. In 1983, it increased by 30%. What was its population at the end of 1983?",
+    options: ["28,000", "24,000", "26,000", "25,000"],
+    answer: 2  // 26,000 :contentReference[oaicite:11]{index=11}
   }
 ];
+
 
 
 let timerInterval;
