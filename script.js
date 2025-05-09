@@ -1,7 +1,61 @@
 const questions = [
-  { question: "What is the capital of France?", options: ["Berlin","Paris","Madrid","Rome"], answer: 1 },
-  { question: "2 + 3 equals?",               options: ["3","4","5","6"],         answer: 2 }
+  {
+    question: "Who discovered the electron?",
+    options: ["Marie Curie", "J.J. Thomson", "Ernest Rutherford", "Niels Bohr"],
+    answer: 1
+  },
+  {
+    question: "Due to ocean acidification, the pH of surface ocean water has decreased by about what amount since the Industrial Revolution?",
+    options: ["0.01", "0.1", "1.0", "10.0"],
+    answer: 1
+  },
+  {
+    question: "Which of the following is NOT a part of the Quantitative Aptitude section of CUET?",
+    options: ["Number Systems", "Series Completion", "Coding–Decoding", "Logarithms"],
+    answer: 2
+  },
+  {
+    question: "The distance between two points (2,3) and (−1,−1) in the Cartesian plane is:",
+    options: ["5", "√20", "√13", "7"],
+    answer: 2
+  },
+  {
+    question: "Which constitutional amendment introduced the Right to Education in India?",
+    options: ["73rd", "86th", "91st", "93rd"],
+    answer: 1
+  },
+  {
+    question: "In logical reasoning, if all roses are flowers and some flowers fade quickly, we can conclude that:",
+    options: [
+      "All roses fade quickly",
+      "Some roses may fade quickly",
+      "No rose fades quickly",
+      "All flowers are roses"
+    ],
+    answer: 1
+  },
+  {
+    question: "The G20 summit in 2024 was hosted by which country?",
+    options: ["Italy", "India", "Brazil", "Japan"],
+    answer: 1
+  },
+  {
+    question: "The compound interest on a principal of ₹1,000 at 10% per annum compounded annually for 2 years is:",
+    options: ["₹210", "₹100", "₹110", "₹120"],
+    answer: 0
+  },
+  {
+    question: "Which planet has the longest day (rotation period) in our solar system?",
+    options: ["Venus", "Mercury", "Jupiter", "Saturn"],
+    answer: 0
+  },
+  {
+    question: "Who is the author of the play ‘Hamlet’?",
+    options: ["Christopher Marlowe", "Ben Jonson", "William Shakespeare", "John Webster"],
+    answer: 2
+  }
 ];
+
 
 let timerInterval;
 let lastInteractionTime = null;
