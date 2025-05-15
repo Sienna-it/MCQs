@@ -1,5 +1,4 @@
-
-
+const questions = window.shuffledQuestions;
 let timerInterval;
 let lastInteractionTime = null;
 const questionTimes = Array(questions.length).fill(0);
