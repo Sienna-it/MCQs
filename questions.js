@@ -300,4 +300,3 @@ let questions = [
     answer: 1
   }
 ];
-window.questions = questions;
