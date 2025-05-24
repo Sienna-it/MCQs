@@ -8,7 +8,7 @@ function shuffleArray(array) {
 }
 
 // Create and expose shuffled questions
-window.shuffledQuestions = (function() {
+questions = (function() {
   // Create a deep copy of original questions
   const questionsCopy = JSON.parse(JSON.stringify(window.questions));
   
