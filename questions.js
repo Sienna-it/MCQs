@@ -1,4 +1,4 @@
-const questions = [
+let questions = [
   {
     question: "Which three organs of government are mentioned as needing “intelligent sharing of power”?",
     options: [
