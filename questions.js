@@ -1,302 +1,302 @@
 let questions = [
   {
-    question: "Which three organs of government are mentioned as needing “intelligent sharing of power”?",
+    question: "What does the shattered remains in Sorrieu's print symbolize?",
     options: [
-      "Legislature, executive, judiciary",
-      "Executive, judiciary, military",
-      "Legislature, executive, media",
-      "Judiciary, bureaucracy, legislature"
-    ],
-    answer: 0
-  },
-  {
-    question: "What is the definition of an “ethnic” social division?",
-    options: [
-      "A division based solely on religion",
-      "A division based on shared culture and common descent",
-      "A division based on occupation",
-      "A division based on political affiliation"
+      "Feudal system artifacts",
+      "Symbols of absolutist institutions",
+      "Ruins of ancient democracies",
+      "Destroyed revolutionary flags"
     ],
     answer: 1
   },
   {
-    question: "Belgium’s area is compared to which Indian state?",
+    question: "Which nations lead the procession in Sorrieu's 1848 print?",
     options: [
-      "Punjab",
-      "Gujarat",
-      "Haryana",
-      "Rajasthan"
+      "France and England",
+      "Germany and Austria",
+      "United States and Switzerland",
+      "Russia and Poland"
     ],
     answer: 2
   },
   {
-    question: "Approximately what percentage of Belgium’s population lives in the Flemish region?",
+    question: "What did the German flag in Sorrieu's print represent in 1848?",
     options: [
-      "40%",
-      "80%",
-      "20%",
-      "59%"
-    ],
-    answer: 3
-  },
-  {
-    question: "What percentage of Belgians live in the Wallonia region and speak French?",
-    options: [
-      "40%",
-      "59%",
-      "13%",
-      "20%"
-    ],
-    answer: 0
-  },
-  {
-    question: "What proportion of Belgium’s population speaks German?",
-    options: [
-      "5%",
-      "1%",
-      "10%",
-      "20%"
-    ],
-    answer: 1
-  },
-  {
-    question: "In Brussels, what is the approximate French- vs. Dutch-speaking split?",
-    options: [
-      "50% French, 50% Dutch",
-      "60% French, 40% Dutch",
-      "80% French, 20% Dutch",
-      "20% French, 80% Dutch"
+      "Existing unified nation-state",
+      "Colonial ambitions",
+      "Liberal hopes for unification",
+      "Allegiance to French ideals"
     ],
     answer: 2
   },
   {
-    question: "Why did tensions grow between Dutch- and French-speaking communities in Belgium?",
+    question: "According to Ernst Renan, what forms the basis of a nation?",
     options: [
-      "Religious persecution",
-      "Border disputes with Germany",
-      "Differences in political ideology",
-      "Economic and educational inequalities"
-    ],
-    answer: 3
-  },
-  {
-    question: "Sri Lanka became independent in which year?",
-    options: [
-      "1948",
-      "1945",
-      "1956",
-      "1960"
-    ],
-    answer: 0
-  },
-  {
-    question: "Sri Lanka’s population is said to be about the same as which Indian state?",
-    options: [
-      "Kerala",
-      "Haryana",
-      "Maharashtra",
-      "Uttar Pradesh"
-    ],
-    answer: 1
-  },
-  {
-    question: "What percentage of Sri Lanka’s population are Sinhala-speakers?",
-    options: [
-      "59%",
-      "40%",
-      "74%",
-      "18%"
+      "Common language and territory",
+      "Shared racial characteristics",
+      "Long past of endeavours and sacrifice",
+      "Uniform religious practices"
     ],
     answer: 2
   },
   {
-    question: "What percentage of Sri Lankans are Tamil-speakers (all Tamil groups combined)?",
+    question: "What concept did Renan describe as 'a daily plebiscite'?",
     options: [
-      "13%",
-      "31%",
-      "25%",
-      "18%"
-    ],
-    answer: 3
-  },
-  {
-    question: "Among Tamils in Sri Lanka, what share are “Sri Lankan Tamils”?",
-    options: [
-      "13%",
-      "18%",
-      "74%",
-      "7%"
-    ],
-    answer: 0
-  },
-  {
-    question: "Most Sinhala-speakers in Sri Lanka follow which religion?",
-    options: [
-      "Hinduism",
-      "Buddhism",
-      "Islam",
-      "Christianity"
-    ],
-    answer: 1
-  },
-  {
-    question: "Which act in 1956 heightened Tamil alienation in Sri Lanka?",
-    options: [
-      "Act making Tamil the only official language",
-      "Act establishing regional autonomy for Tamils",
-      "Act making Sinhala the only official language",
-      "Act recognizing English as the national language"
+      "Democratic elections",
+      "Territorial expansion",
+      "Existence of nations",
+      "Revolutionary struggle"
     ],
     answer: 2
   },
   {
-    question: "Sri Lankan governments adopted preferential policies favouring which group?",
+    question: "Which event marked the first clear expression of nationalism?",
     options: [
-      "Tamil applicants",
-      "German-speaking applicants",
-      "English-speaking applicants",
-      "Sinhala applicants"
-    ],
-    answer: 3
-  },
-  {
-    question: "The new Sri Lankan constitution stipulated that the state shall protect and foster which religion?",
-    options: [
-      "Buddhism",
-      "Hinduism",
-      "Christianity",
-      "Islam"
-    ],
-    answer: 0
-  },
-  {
-    question: "Which of the following feelings did Sri Lankan Tamils experience due to government measures?",
-    options: [
-      "Empowerment",
-      "Alienation",
-      "Neutrality",
-      "Ecstatic pride"
-    ],
-    answer: 1
-  },
-  {
-    question: "By the 1980s, Tamil groups in Sri Lanka were demanding",
-    options: [
-      "Union with India",
-      "A federal arrangement only",
-      "An independent Tamil Eelam",
-      "Greater power for the Sinhala majority"
+      "Congress of Vienna (1815)",
+      "Napoleonic Wars (1803-1815)",
+      "French Revolution (1789)",
+      "German unification (1871)"
     ],
     answer: 2
   },
   {
-    question: "The Sri Lankan civil war ended in which year?",
+    question: "What did the French revolutionaries replace the royal standard with?",
     options: [
-      "2005",
-      "1993",
-      "2012",
-      "2009"
+      "Imperial eagle",
+      "Tree of Liberty",
+      "Tricolour flag",
+      "Bastille image"
     ],
-    answer: 3
+    answer: 2
   },
   {
-    question: "“Majoritarianism” is best defined as",
+    question: "Which administrative change was NOT introduced by French revolutionaries?",
     options: [
-      "A belief that a majority community should rule regardless of minorities",
-      "A belief in equal power sharing",
-      "A system of proportional representation",
-      "A federal system of government"
+      "Uniform weights and measures",
+      "Centralized administration",
+      "Regional tax exemptions",
+      "Abolition of internal customs"
     ],
-    answer: 0
+    answer: 2
   },
   {
-    question: "Which two countries’ stories are used to introduce power-sharing?",
+    question: "What was the French revolutionary mission toward Europe?",
     options: [
-      "India and Pakistan",
-      "Belgium and Sri Lanka",
-      "Germany and Russia",
-      "Canada and Nigeria"
+      "Establish colonial rule",
+      "Spread Catholic faith",
+      "Liberate peoples from despotism",
+      "Enforce French language"
+    ],
+    answer: 2
+  },
+  {
+    question: "What did Andreas Rebmann's almanac (Fig. 2) juxtapose with Bastille?",
+    options: [
+      "British naval ship",
+      "Prussian military academy",
+      "Despotic fortress in Kassel",
+      "Vienna Congress hall"
+    ],
+    answer: 2
+  },
+  {
+    question: "Which principle was NOT part of Napoleonic Code?",
+    options: [
+      "Equality before law",
+      "Privileges based on birth",
+      "Right to property",
+      "Secular legislation"
     ],
     answer: 1
   },
   {
-    question: "Belgium borders all of the following EXCEPT",
+    question: "Where did Napoleon NOT implement his administrative reforms?",
     options: [
-      "France",
-      "Netherlands",
+      "Dutch Republic",
+      "Ottoman Empire",
+      "Switzerland",
+      "Italian states"
+    ],
+    answer: 1
+  },
+  {
+    question: "How does Fig. 4 portray French soldiers in Zweibrücken?",
+    options: [
+      "Liberators bringing equality",
+      "Cultural ambassadors",
+      "Oppressors and harassers",
+      "Economic reformers"
+    ],
+    answer: 2
+  },
+  {
+    question: "What economic benefit did businessmen appreciate under Napoleon?",
+    options: [
+      "Increased guild protections",
+      "Regional trade barriers",
+      "Uniform laws and currency",
+      "Feudal dues abolition"
+    ],
+    answer: 2
+  },
+  {
+    question: "Where were French armies initially welcomed?",
+    options: [
+      "Zweibrücken and Leipzig",
+      "Madrid and Lisbon",
+      "Vienna and Berlin",
+      "Brussels and Milan"
+    ],
+    answer: 3
+  },
+  {
+    question: "What caused hostility toward French rule?",
+    options: [
+      "Introduction of democracy",
+      "Preservation of local traditions",
+      "Forced conscription and censorship",
+      "Decentralized administration"
+    ],
+    answer: 2
+  },
+  {
+    question: "What does Fig. 5 symbolize about Napoleon?",
+    options: [
+      "Military victories",
+      "Administrative efficiency",
+      "Loss of territories",
+      "Cultural influence"
+    ],
+    answer: 2
+  },
+  {
+    question: "How does the text define 'utopian'?",
+    options: [
+      "Practical governance model",
+      "Imperial expansion strategy",
+      "Ideal society unlikely to exist",
+      "Revolutionary battle plan"
+    ],
+    answer: 2
+  },
+  {
+    question: "What did Christ and angels symbolize in Sorrieu's print?",
+    options: [
+      "Religious authority over states",
+      "Divine punishment for revolutionaries",
+      "Fraternity among nations",
+      "Monarchical legitimacy"
+    ],
+    answer: 2
+  },
+  {
+    question: "What replaced multi-national dynastic empires in 19th-century Europe?",
+    options: [
+      "Colonial systems",
+      "Theocratic states",
+      "Feudal principalities",
+      "Nation-states"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which group helped spread revolutionary ideas through Jacobin clubs?",
+    options: [
+      "Rural peasantry",
+      "Urban nobility",
+      "Educated middle classes",
+      "Clergy members"
+    ],
+    answer: 2
+  },
+  {
+    question: "What did the French Revolution transfer sovereignty to?",
+    options: [
+      "Military generals",
+      "Body of citizens",
+      "Foreign allies",
+      "Religious leaders"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which practice was introduced to create collective French identity?",
+    options: [
+      "Regional dialects promotion",
+      "Feudal dues collection",
+      "Commemoration of martyrs",
+      "Royal standard restoration"
+    ],
+    answer: 2
+  },
+  {
+    question: "What did Napoleonic reforms abolish in occupied territories?",
+    options: [
+      "Centralized administration",
+      "Guild restrictions",
+      "Standardized currency",
+      "Enlightenment ideals"
+    ],
+    answer: 1
+  },
+  {
+    question: "What does the sarcastic plaque on Tree of Liberty criticize?",
+    options: [
+      "German principalities",
+      "Napoleonic taxation",
+      "French liberation claims",
+      "British naval blockade"
+    ],
+    answer: 2
+  },
+  {
+    question: "Which territory was NOT lost by Napoleon after Leipzig (Fig. 5)?",
+    options: [
+      "Rhineland",
+      "Switzerland",
       "Italy",
-      "Germany"
+      "Poland"
+    ],
+    answer: 1
+  },
+  {
+    question: "What does Renan consider essential for being a people?",
+    options: [
+      "Common racial purity",
+      "Shared religious doctrine",
+      "Common glories and will",
+      "Geographical isolation"
     ],
     answer: 2
   },
   {
-    question: "Belgium’s French-speaking minority was comparatively",
+    question: "Which institution was renamed National Assembly?",
     options: [
-      "Poor and marginalized",
-      "Uneducated",
-      "Politically insignificant",
-      "Rich and powerful"
-    ],
-    answer: 3
-  },
-  {
-    question: "What could have happened in Belgium if the Dutch majority had forced its will?",
-    options: [
-      "A messy partition over Brussels",
-      "Peaceful unity",
-      "A federal merger with France",
-      "Unilateral Dutch rule without conflict"
-    ],
-    answer: 0
-  },
-  {
-    question: "What could the Sinhala majority have done in Sri Lanka?",
-    options: [
-      "Enforce bilingualism",
-      "Impose its will on the entire country",
-      "Share power equally voluntarily",
-      "Abolish the presidency"
+      "Jacobin Club",
+      "Estates General",
+      "Royal Court",
+      "Bastille Garrison"
     ],
     answer: 1
   },
   {
-    question: "Which term describes the belief that a majority’s wishes override minority rights?",
+    question: "What did Sorrieu's procession NOT include?",
     options: [
-      "Federalism",
-      "Majoritarianism",
-      "Pluralism",
-      "Coalitionism"
+      "People of all social classes",
+      "Distinct national groups",
+      "Asian and African nations",
+      "Homage to Liberty statue"
     ],
-    answer: 1
+    answer: 2
   },
   {
-    question: "Which map shows the concentration of ethnic communities in Sri Lanka?",
+    question: "What was the Congress of Vienna's outcome?",
     options: [
-      "A map of Belgium regions",
-      "A map of Sri Lanka provinces",
-      "A map of Indian states",
-      "A world map"
+      "Unified Germany",
+      "Dissolved Austria-Hungary",
+      "Redrew European map (Fig. 3)",
+      "Abolished monarchies"
     ],
-    answer: 1
-  },
-  {
-    question: "What percentage of Sri Lankan Christians (both Tamil and Sinhala) is mentioned?",
-    options: [
-      "7%",
-      "13%",
-      "18%",
-      "74%"
-    ],
-    answer: 0
-  },
-  {
-    question: "Which of these was NOT a government action in Sri Lanka?",
-    options: [
-      "Recognizing only Sinhala as official language",
-      "Establishing equal representation of Tamils in central government",
-      "Favoring Sinhala applicants for jobs",
-      "Protecting and fostering Buddhism constitutionally"
-    ],
-    answer: 1
+    answer: 2
   }
 ];
