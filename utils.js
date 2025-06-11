@@ -8,7 +8,7 @@ function shuffleArray(array) {
 }
 
 // Create and expose shuffled questions
-questions = (function() {
+questions = shuffleArray((function() {
   // Create a deep copy of original questions
   const questionsCopy = JSON.parse(JSON.stringify(window.questions));
   
@@ -24,4 +24,4 @@ questions = (function() {
       answer: question.options.indexOf(correctAnswer)
     };
   });
-})();
+})());
