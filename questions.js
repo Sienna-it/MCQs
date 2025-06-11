@@ -134,7 +134,7 @@ let additionalQuestions = [
     options: [
       "Regular taxation",
       "Ongoing consent to nationhood",
-      Military conscription",
+      "Military conscription",
       "Territorial expansion"
     ],
     answer: 1
