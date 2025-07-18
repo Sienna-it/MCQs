@@ -2,7 +2,7 @@
 let timerInterval;
 let lastInteractionTime = null;
 const questionTimes = Array(questions.length).fill(0);
-const totalTime = questions.length * 60;
+const totalTime = questions.length * 30;
 let countdownTime = totalTime;
 
 const startBtn       = document.getElementById('start-btn');
@@ -105,7 +105,7 @@ submitBtn.addEventListener('click', () => {
       status,
       pts,
       question: q.question,
-      correctText: q.options[q.answer]
+      correctText: q.answer
     };
   });
 
