@@ -105,7 +105,8 @@ submitBtn.addEventListener('click', () => {
       status,
       pts,
       question: q.question,
-      correctText: q.answer
+      correctText: q.options[q.answer],
+      userAnswerText: q.options[val]
     };
   });
 
