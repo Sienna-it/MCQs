@@ -520,7 +520,7 @@ let questions = [
     answer: 1
   }
 ];
-
+window.questions = questions;
 // Export instructions:
 // 1. Save this entire code as 'Footprints_MCQs.js'
 // 2. Use in any JavaScript environment
