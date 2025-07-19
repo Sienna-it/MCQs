@@ -10,7 +10,7 @@ function shuffleArray(array) {
 // Create and expose shuffled questions
 questions = shuffleArray((function() {
   // Create a deep copy of original questions
-  const questionsCopy = JSON.parse(JSON.stringify(window.questions));
+  const questionsCopy = JSON.parse(JSON.stringify(questions));
   
   // Shuffle question order
   shuffleArray(questionsCopy);
