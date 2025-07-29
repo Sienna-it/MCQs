@@ -1,241 +1,101 @@
 let questions = [
   {
-    question: "Where is the tiger physically located in the beginning of the poem?",
+    question: "Why might the poet describe the tiger’s stripes as 'vivid' in the context of the zoo?",
     options: [
-      "In a jungle clearing",
-      "In a zoo cage",
-      "Near a water hole",
-      "On a mountain slope"
+      "To emphasize how brightly colored zoo cages are",
+      "To highlight the contrast between the tiger’s natural beauty and its dull surroundings",
+      "To suggest that the tiger is wearing painted stripes",
+      "To imply the tiger is healthier in captivity"
     ],
     answer: 1
   },
   {
-    question: "What does the phrase 'pads of velvet quiet' suggest about the tiger?",
+    question: "What does the repeated mention of the tiger ‘stalking’ in both cage and jungle suggest about its nature?",
     options: [
-      "He walks loudly",
-      "He is clumsy",
-      "He moves silently",
-      "He has torn paws"
-    ],
-    answer: 2
-  },
-  {
-    question: "What emotion is described in the line 'In his quiet rage'?",
-    options: [
-      "Peacefulness",
-      "Suppressed anger",
-      "Fear",
-      "Excitement"
+      "That it is equally comfortable in both settings",
+      "That its predatory instincts cannot be fully suppressed by confinement",
+      "That it has lost all natural instincts in the zoo",
+      "That it only stalks when it is hungry"
     ],
     answer: 1
   },
   {
-    question: "According to the poet, where *should* the tiger be?",
+    question: "How does the phrase 'quiet rage' function as a commentary on captivity beyond the literal tiger?",
     options: [
-      "Behind zoo bars",
-      "In a circus",
-      "Lurking in jungle shadows",
-      "Sleeping in a cave"
-    ],
-    answer: 2
-  },
-  {
-    question: "What kind of prey is mentioned as passing near the water hole?",
-    options: [
-      "Wild boars",
-      "Buffaloes",
-      "Plump deer",
-      "Zebras"
-    ],
-    answer: 2
-  },
-  {
-    question: "What is the tiger doing near the jungle’s edge in the poem?",
-    options: [
-      "Sleeping peacefully",
-      "Baring his fangs and claws",
-      "Playing with cubs",
-      "Swimming in a river"
+      "It implies that torture always leaves one silent",
+      "It draws a parallel to any sentient being forced into restraint",
+      "It suggests that rage is never outwardly visible",
+      "It literalizes how quiet sounds can be angry"
     ],
     answer: 1
   },
   {
-    question: "What kind of housing is the tiger locked in at the zoo?",
+    question: "If the word 'concrete' were replaced with 'glass', how would the symbolism shift?",
     options: [
-      "A steel cage",
-      "A bamboo enclosure",
-      "A wooden hut",
-      "A concrete cell"
-    ],
-    answer: 3
-  },
-  {
-    question: "What does the tiger do as night falls in the zoo?",
-    options: [
-      "Sleeps soundly",
-      "Growls at visitors",
-      "Stares at stars",
-      "Snarls at the guards"
-    ],
-    answer: 2
-  },
-  {
-    question: "Which of these is *not* used to describe the tiger in the jungle?",
-    options: [
-      "Sliding through long grass",
-      "Terrorising the village",
-      "Pacing in a cage",
-      "Snarling around houses"
-    ],
-    answer: 2
-  },
-  {
-    question: "What literary device is used in 'brilliant eyes' and 'brilliant stars'?",
-    options: [
-      "Metaphor",
-      "Personification",
-      "Alliteration",
-      "Repetition"
-    ],
-    answer: 3
-  },
-  {
-    question: "What contrast does the poem make overall?",
-    options: [
-      "Old tigers and young tigers",
-      "Jungle freedom and zoo captivity",
-      "Zookeepers and hunters",
-      "Night and day life of animals"
-    ],
-    answer: 1
-  },
-  {
-    question: "What is the tiger ignoring as it paces in the cage?",
-    options: [
-      "The other animals",
-      "His hunger",
-      "The visitors",
-      "The stars"
-    ],
-    answer: 2
-  },
-  {
-    question: "How is the tiger’s strength described in the zoo?",
-    options: [
-      "Expressed freely",
-      "Used to escape",
-      "Wasted on roaring",
-      "Behind bars"
-    ],
-    answer: 3
-  },
-  {
-    question: "Which phrase best captures the tone of the poem?",
-    options: [
-      "Joyful and light",
-      "Fearful and panicked",
-      "Calm and dreamy",
-      "Sympathetic and sorrowful"
-    ],
-    answer: 3
-  },
-  {
-    question: "What color are the tiger’s stripes described as?",
-    options: [
-      "Dull brown",
-      "Vivid",
-      "Faded",
-      "Black and white"
-    ],
-    answer: 1
-  },
-  {
-    question: "How many steps of his cage does the tiger stalk?",
-    options: [
-      "Just a few",
-      "Several dozen",
-      "A hundred",
-      "Countless"
+      "From hard confinement to transparency and observation",
+      "From captivity to freedom",
+      "From artificial to natural material",
+      "From loud to silent"
     ],
     answer: 0
   },
   {
-    question: "Which word is repeated to emphasize both the tiger’s voice and the night sky?",
+    question: "Which human emotion or situation is most closely mirrored by the tiger’s experience in the poem?",
     options: [
-      "Quiet",
-      "Brilliant",
-      "Stalking",
-      "Rage"
+      "The excitement of a traveler exploring new lands",
+      "The frustration of someone stuck in a meaningless routine",
+      "The joy of a child playing freely",
+      "The comfort of returning home"
     ],
     answer: 1
   },
   {
-    question: "What does the phrase 'last voice at night' refer to?",
+    question: "What critical role does the night setting play in shaping the poem’s mood?",
     options: [
-      "A distant bird",
-      "The patrolling cars",
-      "The zookeeper",
-      "A crying cub"
+      "It allows the tiger to escape unnoticed",
+      "It heightens the sense of isolation and longing",
+      "It shows the tiger sleeping peacefully",
+      "It indicates that the poem is about dreams"
     ],
     answer: 1
   },
   {
-    question: "What mood is evoked by the word 'stalking' in the poem?",
+    question: "Which statement best captures the poem’s primary theme?",
     options: [
-      "Playfulness",
-      "Timidity",
-      "Predatory tension",
-      "Calm rest"
+      "Captivity can dull even the most majestic beings",
+      "Animals are happiest when watched by humans",
+      "Concrete structures are essential to safety",
+      "Stripes are symbolic of power"
     ],
-    answer: 2
+    answer: 0
   },
   {
-    question: "Which word describes the tiger’s outdoor, natural movement?",
+    question: "How does juxtaposing the tiger’s cage behavior with its imagined jungle behavior enhance the reader’s understanding?",
     options: [
-      "Stalking",
-      "Lurking",
-      "Pacing",
-      "Ignoring"
-    ],
-    answer: 1
-  },
-  {
-    question: "What does 'concrete cell' symbolize in the poem?",
-    options: [
-      "A natural cave",
-      "Harsh confinement",
-      "Open freedom",
-      "Soft bedding"
+      "By showing that the tiger is cleverer in the zoo",
+      "By contrasting restriction with wild freedom to underscore the tragedy of captivity",
+      "By implying the tiger prefers cages",
+      "By illustrating that descriptions are unreliable"
     ],
     answer: 1
   },
   {
-    question: "What animal action appears both in cage and jungle descriptions?",
+    question: "If the tiger could speak for one moment, what message from the poem might it most likely convey?",
     options: [
-      "Roaring loudly",
-      "Sliding silently",
-      "Stalking",
-      "Sleeping"
+      "That it enjoys the zoo more than the jungle",
+      "That its true nature is being suppressed by bars",
+      "That it fears the stars",
+      "That it prefers concrete over grass"
     ],
-    answer: 2
+    answer: 1
   },
   {
-    question: "Which sense is most highlighted when the tiger 'hears the last voice at night'?",
+    question: "In what way does the final image of the tiger ‘staring at the stars’ deepen the poem’s emotional impact?",
     options: [
-      "Sight",
-      "Smell",
-      "Hearing",
-      "Touch"
-    ],
-    answer: 2
-  },
-  {
-    question: "Why does the tiger 'ignore visitors' according to the poem?",
-    options: [
-      "Because he’s shy",
-      "Because he’s angry",
-      "Because he’s tired",
-      "Because he’s dreaming"
+      "It suggests the tiger wants to navigate by stars",
+      "It evokes a sense of shared wonder and yearning between tiger and reader",
+      "It indicates the tiger is planning an escape",
+      "It implies the tiger is hunting at night"
     ],
     answer: 1
   }
