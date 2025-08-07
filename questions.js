@@ -1,102 +1,302 @@
-let questions = [
+const questions = [
   {
-    question: "Why might the poet describe the tiger’s stripes as 'vivid' in the context of the zoo?",
+    question: "Which of the following best defines a 'resource' in geography?",
     options: [
-      "To emphasize how brightly colored zoo cages are",
-      "To highlight the contrast between the tiger’s natural beauty and its dull surroundings",
-      "To suggest that the tiger is wearing painted stripes",
-      "To imply the tiger is healthier in captivity"
+      "Any gift of nature available free of cost",
+      "Anything available in the environment that can be technologically, economically, and culturally converted to benefit",
+      "Only minerals and fossil fuels",
+      "Land and water only"
     ],
     answer: 1
   },
   {
-    question: "What does the repeated mention of the tiger ‘stalking’ in both cage and jungle suggest about its nature?",
+    question: "On the basis of origin, resources are classified into:",
     options: [
-      "That it is equally comfortable in both settings",
-      "That its predatory instincts cannot be fully suppressed by confinement",
-      "That it has lost all natural instincts in the zoo",
-      "That it only stalks when it is hungry"
+      "Renewable and non-renewable",
+      "Biotic and abiotic",
+      "Individual and community",
+      "Potential and reserve"
     ],
     answer: 1
   },
   {
-    question: "How does the phrase 'quiet rage' function as a commentary on captivity beyond the literal tiger?",
+    question: "Which classification groups resources as renewable vs. non-renewable?",
     options: [
-      "It implies that torture always leaves one silent",
-      "It draws a parallel to any sentient being forced into restraint",
-      "It suggests that rage is never outwardly visible",
-      "It literalizes how quiet sounds can be angry"
+      "By origin",
+      "By exhaustibility",
+      "By ownership",
+      "By status of development"
     ],
     answer: 1
   },
   {
-    question: "If the word 'concrete' were replaced with 'glass', how would the symbolism shift?",
+    question: "Which of these is NOT a category in ownership classification of resources?",
     options: [
-      "From hard confinement to transparency and observation",
-      "From captivity to freedom",
-      "From artificial to natural material",
-      "From loud to silent"
+      "Individual",
+      "Community",
+      "Corporate",
+      "International"
+    ],
+    answer: 2
+  },
+  {
+    question: "‘Potential’ and ‘reserve’ are terms used in which resource classification?",
+    options: [
+      "By origin",
+      "By exhaustibility",
+      "By ownership",
+      "By status of development"
+    ],
+    answer: 3
+  },
+  {
+    question: "The Rio Earth Summit of 1992 endorsed which of the following?",
+    options: [
+      "Declaration on Global Climatic Change and Biological Diversity",
+      "Paris Agreement",
+      "Montreal Protocol",
+      "Stockholm Conference"
     ],
     answer: 0
   },
   {
-    question: "Which human emotion or situation is most closely mirrored by the tiger’s experience in the poem?",
+    question: "‘Agenda 21’ is a global action plan focused on:",
     options: [
-      "The excitement of a traveler exploring new lands",
-      "The frustration of someone stuck in a meaningless routine",
-      "The joy of a child playing freely",
-      "The comfort of returning home"
+      "Nuclear disarmament",
+      "Sustainable development",
+      "International trade liberalization",
+      "Space exploration"
     ],
     answer: 1
   },
   {
-    question: "What critical role does the night setting play in shaping the poem’s mood?",
+    question: "Which year did world leaders sign Agenda 21 at the UNCED?",
     options: [
-      "It allows the tiger to escape unnoticed",
-      "It heightens the sense of isolation and longing",
-      "It shows the tiger sleeping peacefully",
-      "It indicates that the poem is about dreams"
+      "1987",
+      "1992",
+      "2002",
+      "1972"
     ],
     answer: 1
   },
   {
-    question: "Which statement best captures the poem’s primary theme?",
+    question: "Sustainable development is defined as:",
     options: [
-      "Captivity can dull even the most majestic beings",
-      "Animals are happiest when watched by humans",
-      "Concrete structures are essential to safety",
-      "Stripes are symbolic of power"
+      "Development without any economic growth",
+      "Meeting present needs without compromising future generations’ ability to meet their own needs",
+      "Maximizing industrial output at any cost",
+      "Conserving resources by halting development"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which of the following is the first step in resource planning?",
+    options: [
+      "Matching plans with national development",
+      "Evolving institutional structure",
+      "Identification and inventory of resources",
+      "Implementing development projects"
+    ],
+    answer: 2
+  },
+  {
+    question: "Resource planning in India began with:",
+    options: [
+      "Second Five Year Plan",
+      "First Five Year Plan",
+      "Green Revolution",
+      "Nehru Report"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which state is rich in minerals but economically backward due to lack of infrastructure?",
+    options: [
+      "Jharkhand",
+      "Punjab",
+      "Kerala",
+      "Goa"
     ],
     answer: 0
   },
   {
-    question: "How does juxtaposing the tiger’s cage behavior with its imagined jungle behavior enhance the reader’s understanding?",
+    question: "Who famously said, “There is enough land for everybody’s need and not for anybody’s greed”?",
     options: [
-      "By showing that the tiger is cleverer in the zoo",
-      "By contrasting restriction with wild freedom to underscore the tragedy of captivity",
-      "By implying the tiger prefers cages",
-      "By illustrating that descriptions are unreliable"
+      "Mahatma Gandhi",
+      "Dr. B.R. Ambedkar",
+      "Jawaharlal Nehru",
+      "Vikram Sarabhai"
+    ],
+    answer: 0
+  },
+  {
+    question: "The Club of Rome’s landmark report ‘Limits to Growth’ was published in:",
+    options: [
+      "1968",
+      "1972",
+      "1987",
+      "1992"
     ],
     answer: 1
   },
   {
-    question: "If the tiger could speak for one moment, what message from the poem might it most likely convey?",
+    question: "Which of the following is NOT a major cause of land degradation?",
     options: [
-      "That it enjoys the zoo more than the jungle",
-      "That its true nature is being suppressed by bars",
-      "That it fears the stars",
-      "That it prefers concrete over grass"
+      "Deforestation",
+      "Overgrazing",
+      "Afforestation",
+      "Mining"
+    ],
+    answer: 2
+  },
+  {
+    question: "Over-irrigation in Punjab and Haryana has primarily led to:",
+    options: [
+      "Deforestation",
+      "Waterlogging and salinity",
+      "Desertification",
+      "Increased biodiversity"
     ],
     answer: 1
   },
   {
-    question: "In what way does the final image of the tiger ‘staring at the stars’ deepen the poem’s emotional impact?",
+    question: "Which measure helps control sand dune movement in arid regions?",
     options: [
-      "It suggests the tiger wants to navigate by stars",
-      "It evokes a sense of shared wonder and yearning between tiger and reader",
-      "It indicates the tiger is planning an escape",
-      "It implies the tiger is hunting at night"
+      "Overgrazing",
+      "Planting shelter belts of vegetation",
+      "Waterlogging",
+      "Mining"
     ],
     answer: 1
+  },
+  {
+    question: "Permanent pastures and grazing lands fall under which land-use category?",
+    options: [
+      "Net sown area",
+      "Other uncultivated land",
+      "Land not available for cultivation",
+      "Fallow lands"
+    ],
+    answer: 1
+  },
+  {
+    question: "Land left uncultivated for more than five years but less than cultivation potential is called:",
+    options: [
+      "Current fallow",
+      "Other than current fallow",
+      "Permanent pasture",
+      "Waste land"
+    ],
+    answer: 1
+  },
+  {
+    question: "Gross cropped area is defined as:",
+    options: [
+      "Area sown only once",
+      "Net sown area plus area sown more than once",
+      "Total geographical area",
+      "Area under forests"
+    ],
+    answer: 1
+  },
+  {
+    question: "As per the National Forest Policy (1952), desired forest cover is:",
+    options: [
+      "33% of geographical area",
+      "20% of net sown area",
+      "50% of reporting area",
+      "10% of total land"
+    ],
+    answer: 0
+  },
+  {
+    question: "Which Indian state has over 80% of its reporting area as net sown?",
+    options: [
+      "Punjab",
+      "Arunachal Pradesh",
+      "Mizoram",
+      "Andaman & Nicobar"
+    ],
+    answer: 0
+  },
+  {
+    question: "Mining-induced deforestation is especially severe in:",
+    options: [
+      "Kerala and Tamil Nadu",
+      "Jharkhand and Chhattisgarh",
+      "Punjab and Haryana",
+      "Rajasthan and Gujarat"
+    ],
+    answer: 1
+  },
+  {
+    question: "Industrial effluents most directly cause:",
+    options: [
+      "Air pollution only",
+      "Land and water pollution",
+      "Increase in forest area",
+      "Salinity control"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which of the following is a conservation measure against over-grazing?",
+    options: [
+      "Encouraging more livestock",
+      "Rotational grazing management",
+      "Removing all vegetation",
+      "Increasing mining leases"
+    ],
+    answer: 1
+  },
+  {
+    question: "Afforestation helps check land degradation by:",
+    options: [
+      "Reducing soil infiltration",
+      "Binding soil particles and improving water retention",
+      "Increasing mining activity",
+      "Enhancing salinity"
+    ],
+    answer: 1
+  },
+  {
+    question: "Planting thorny bushes in sand dunes is done to:",
+    options: [
+      "Increase soil salinity",
+      "Stabilize shifting sands",
+      "Promote waterlogging",
+      "Enhance mineral extraction"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which is NOT a waste land management strategy?",
+    options: [
+      "Reclaiming and restoring vegetation",
+      "Leaving land barren indefinitely",
+      "Controlled grazing",
+      "Soil erosion control structures"
+    ],
+    answer: 1
+  },
+  {
+    question: "Land degradation affects human life because:",
+    options: [
+      "It increases the land area",
+      "It reduces productivity and damages ecosystems",
+      "It promotes sustainable development",
+      "It only occurs in deserts"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which of the following correctly matches cause and effect of land degradation?",
+    options: [
+      "Over-irrigation → desertification",
+      "Deforestation → enhanced soil fertility",
+      "Mining → deep scars and overburden",
+      "Afforestation → waterlogging"
+    ],
+    answer: 2
   }
 ];
